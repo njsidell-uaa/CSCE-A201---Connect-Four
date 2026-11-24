@@ -47,18 +47,4 @@ bool isBoardFull(const char board[ROWS][COLS]) {
     return true;
 }
 
-bool checkWin(const char board[ROWS][COLS], char piece) {
-    // Horizontal: check every starting spot that has room for 4 to the right
-    for (int r = 0; r < ROWS; r++)
-        for (int c = 0; c <= COLS - 4; c++)
-            if (board[r][c] == piece && board[r][c+1] == piece &&
-                board[r][c+2] == piece && board[r][c+3] == piece)
-                return true;
-
-    // TODO: Vertical       (r, c), (r+1, c), (r+2, c), (r+3, c)
-    // TODO: Diagonal down  (r, c), (r+1, c+1), (r+2, c+2), (r+3, c+3)
-    // TODO: Diagonal up    (r, c), (r-1, c+1), (r-2, c+2), (r-3, c+3)
-    // Adjust each loop's start/end so you never index outside the board.
-
-    return false;
 }
